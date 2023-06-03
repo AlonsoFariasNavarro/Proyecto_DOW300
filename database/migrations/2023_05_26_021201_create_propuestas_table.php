@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer('id')->autoIncrement();
             $table->date('fecha');
             $table->string('documento','100');
-            $table->tinyinteger('estado');
+            $table->tinyinteger('estado')->default(0);
 
             $table->timestamps();
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\AdministradoresController;
 
 //Inicio de sesion
 Route::get('/',[HomeController::class,'login'])->name('home.login');
+Route::get('/.',[HomeController::class,'loginUser'])->name('home.loginUser');
 
 //Estudiante
 Route::get('/estudiante',[EstudiantesController::class,'index'])->name('estudiante.index');

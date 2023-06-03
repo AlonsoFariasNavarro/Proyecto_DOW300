@@ -23,7 +23,8 @@
                         </div>
                         <div class="col" style="width: 30rem;">
                             <div class="card p-3">
-                                <form action="">
+                                <form action="{{route('home.loginUser')}}">
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Rut Usuario</label>
                                         <input type="text" id="username" class="form-control">
@@ -35,26 +36,26 @@
                                     <div class="row">
                                         <div class="col-8">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="userid" id="Estudiante" checked>
+                                              <input class="form-check-input" type="radio" name="userid" id="Estudiante" value="Estudiante">
                                               <label class="form-check-label" for="Estudiante">
                                                 Estudiante
                                               </label>
                                             </div>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="userid" id="Profesor">
+                                              <input class="form-check-input" type="radio" name="userid" id="Profesor" value="Profesor">
                                               <label class="form-check-label" for="Profesor">
                                                 Profesor
                                               </label>
                                             </div>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="userid" id="Administrador">
+                                              <input class="form-check-input" type="radio" name="userid" id="Administrador" value="Administrador">
                                               <label class="form-check-label" for="Administrador">
                                                 Administrador
                                               </label>
                                             </div>
                                         </div>
                                         <div class="col-4 py-4">
-                                            <a href="{{ asset('') }}" class="btn btn-success">Iniciar Sesion</a>
+                                            <button class="btn btn-success" type="submit">Iniciar Sesion</button>
                                         </div>
                                     </div>
                                 </form>
