@@ -5,7 +5,6 @@
 @endsection
 
 @section('contenido-principal')
-    hola mundo laravel
     <div class="container d-flex align-items-center justify-content-center">    
             <div class="row-12">
                 <div class="col-12 px-6 py-5 ">
@@ -26,7 +25,8 @@
                                 </div>
                             </form>
                             <div class="text-end py-3">                        
-                                <a href="#" class="btn btn-success ">ENVIAR PROPUESTA </a>
+                                <button class="btn btn-waring" type="reset" >Cancelar</button>
+                                <button class="btn btn-success" type="submit" >Agregar Propuesta</button>
                             </div>
                         
                         </div>
