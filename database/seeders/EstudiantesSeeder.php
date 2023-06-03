@@ -17,7 +17,16 @@ class EstudiantesSeeder extends Seeder
         DB::table('estudiantes')->insert([
 
 
-            ['rut'=>'21193684', 'nombre'=> 'Cristobal ','apellido' =>'Macalapu','email'=>'toal@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-0', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-1', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-2', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-3', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-4', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-5', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-6', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-7', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-8', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
+            ['rut'=>'21450686-9', 'nombre'=> 'Alonso','apellido' =>'Farias','email'=>'holas@gmail.com','created_at'=>Carbon::now()],
 
         ]);
     }

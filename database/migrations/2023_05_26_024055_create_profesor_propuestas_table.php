@@ -17,14 +17,14 @@ return new class extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->text('comentario');
-            $table->primary(['propuestas_id','profesor_rut']);
+            $table->primary(['propuesta_id','profesor_rut']);
 
             $table->timestamps();
 
 
 
             
-            $table->foreign('propuestas_id')->references('id')->on('propuestas');
+            $table->foreign('propuesta_id')->references('id')->on('propuestas');
             $table->foreign('profesor_rut')->references('rut')->on('profesores');
         });
     }

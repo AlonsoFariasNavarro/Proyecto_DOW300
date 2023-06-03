@@ -15,8 +15,8 @@ Route::get('/estudiante/estado',[EstudiantesController::class,'status'])->name('
 Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('estudiante.create');
 
 //Profesor
-Route::get('/profesor',[ProfesoresController::class],'index')->name('profesor.index');
-Route::get('/profesor/revision',[ProfesoresController::class],'revision')->name('profesor.revision');
+Route::get('/profesor',[ProfesoresController::class,'index'])->name('profesor.index');
+Route::get('/profesor/revision',[ProfesoresController::class,'revision'])->name('profesor.revision');
 
 //Admin
-Route::get('/admin',[AdministradoresController::class],'index')->name('admin.index');
+Route::get('/admin',[AdministradoresController::class,'index'])->name('admin.index');
