@@ -70,6 +70,7 @@
                                         <td class="aling-middle">{{$estudiante->nombre}}</td>
                                         <td class="aling-middle">{{$estudiante->apellido}}</td>
                                         <td class="aling-middle">{{$estudiante->email}}</td>
+                                        <td class="aling-middle">{{$propuesta->estado}}</td>
                                         <td>
                                             <div class="col d-flex m-2" style="">
                                                 <form action="#">
