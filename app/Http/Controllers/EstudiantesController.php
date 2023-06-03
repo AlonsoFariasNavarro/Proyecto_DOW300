@@ -15,6 +15,6 @@ class EstudiantesController extends Controller
     }
 
     public function create(){
-        return view('estudiante.agregar');
+        return view('estudiante.create');
     }
 }
