@@ -23,12 +23,11 @@
                                 <label class="form-label " for="Propuesta">Propuesta</label>
                                 <textarea class="form-control" id="Propuesta" rows="5"></textarea>
                                 </div>
+                                <div class="text-end py-3">                        
+                                    <button class="btn btn-warning" type="reset" >Cancelar</button>
+                                    <button class="btn btn-success" type="submit" >Agregar Propuesta</button>
+                                </div>
                             </form>
-                            <div class="text-end py-3">                        
-                                <button class="btn btn-waring" type="reset" >Cancelar</button>
-                                <button class="btn btn-success" type="submit" >Agregar Propuesta</button>
-                            </div>
-                        
                         </div>
                     </div>
                 </div>
