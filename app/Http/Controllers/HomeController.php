@@ -11,16 +11,16 @@ class HomeController extends Controller
     }
 
     public function loginUser(Request $request){
-        if($request = 'Estudiante'){
-            return view('estudiante.index');
+        if($request->userid == 'Estudiante'){
+           return redirect()->route('estudiante.index');
         }
 
-        if($request = 'Profesor'){
-            return view('profesor.index');
+        elseif($request->userid == 'Profesor'){
+            return redirect()->route('profesor.index');
         }
 
-        if($request = 'Administrador'){
-            return view('administrador.index');
+        elseif($request->userid == 'Administrador'){
+            return redirect()->route('admin.index');
         }
     }
 }

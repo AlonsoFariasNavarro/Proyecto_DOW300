@@ -36,7 +36,7 @@
                     
                 </li>
             </ul>
-                <a href="#" class="btn btn-primary d-flex justify-content-end">Cerrar Sesion</a>
+                <a href="{{ asset('/') }}" class="btn btn-primary d-flex justify-content-end">Cerrar Sesion</a>
             </div>
         </div>
     </nav>

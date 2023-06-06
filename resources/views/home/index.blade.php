@@ -23,7 +23,8 @@
                         </div>
                         <div class="col" style="width: 30rem;">
                             <div class="card p-3">
-                                <form action="{{route('home.loginUser')}}">
+                                <form action="{{route('home.loginUser')}}" method="POST">
+                                    <!-- @method('PUT') -->
                                     @csrf
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Rut Usuario</label>
@@ -36,7 +37,7 @@
                                     <div class="row">
                                         <div class="col-8">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="userid" id="Estudiante" value="Estudiante">
+                                              <input class="form-check-input" type="radio" name="userid" id="Estudiante" value="Estudiante" checked>
                                               <label class="form-check-label" for="Estudiante">
                                                 Estudiante
                                               </label>
