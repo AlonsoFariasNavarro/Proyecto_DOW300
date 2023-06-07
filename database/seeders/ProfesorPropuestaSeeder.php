@@ -16,7 +16,7 @@ class ProfesorPropuestaSeeder extends Seeder
     {
         DB::table('profesor_propuesta')->insert([
 
-            ['propuesta_id'=>1,'profesor_rut'=>'21450686-6','fecha'=>'2023-06-02','hora'=>'20:52','comentario'=>'Esto es un comentario','created_at'=>Carbon::now()],
+            ['propuesta_id'=>1,'profesor_rut'=>'22450686-6','fecha'=>'2023-06-02','hora'=>'20:52','comentario'=>'Esto es un comentario','created_at'=>Carbon::now()],
 
         ]);
     }

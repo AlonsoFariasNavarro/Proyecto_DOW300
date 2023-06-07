@@ -11,7 +11,9 @@
             <div class="col py-5">
                 <div class="card">
                     <div class="card-header d-flex justify-content-center pt-3">
+                        <div class="col"></div>
                         <p>Equipo de Profesores</p>
+                        <div class="col d-flex justify-content-end"><a href="#" class="btn btn-success">Agregar Profesor</a></div>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-striped table-hover">
@@ -31,11 +33,12 @@
                                         <td class="aling-middle">{{$profesor->apellido}}</td>
                                         <td>
                                             <div class="col d-flex m-2" style="">
-                                                <form action="#">
+                                                <form action="{{route('profesor.destroy',$profesor->rut)}}" method="POST">
+                                                    @method('delete')
                                                     @csrf
                                                     <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
                                                 </form>
-                                                <form action="#">
+                                                <form action="{{ route('admin.edit',$profesor->rut) }}">
                                                     @csrf
                                                     <button class="btn btn-sm btn-warning text-white mx-2 my-0 p-0" type="submit"><span class="material-icons">edit</span></button>
                                                 </form>
@@ -51,7 +54,9 @@
             <div class="col py-5">
                 <div class="card">
                     <div class="card-header d-flex justify-content-center pt-3">
-                        <p>Estudiantes</p>
+                        <div class="col"></div>
+                        <p>Estudiante</p>
+                        <div class="col d-flex justify-content-end"><a href="#" class="btn btn-success">Agregar Estudiante</a></div>
                     </div>
                     <div class="card-body">
                     <table class="table table-bordered table-striped table-hover">
@@ -61,6 +66,8 @@
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>E-Mail</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,7 +81,8 @@
                                         </td>
                                         <td>
                                             <div class="col d-flex m-2" style="">
-                                                <form action="#">
+                                                <form action="{{route('estudiante.destroy',$estudiante->rut)}}" method="POST">
+                                                    @method('delete')
                                                     @csrf
                                                     <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
                                                 </form>
