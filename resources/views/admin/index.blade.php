@@ -13,7 +13,9 @@
                     <div class="card-header d-flex justify-content-center pt-3">
                         <div class="col"></div>
                         <p>Equipo de Profesores</p>
-                        <div class="col d-flex justify-content-end"><a href="#" class="btn btn-success">Agregar Profesor</a></div>
+                        <div class="col d-flex justify-content-end">
+                            <a href="#" class="btn btn-success">Agregar Profesor</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-striped table-hover">
@@ -56,7 +58,7 @@
                     <div class="card-header d-flex justify-content-center pt-3">
                         <div class="col"></div>
                         <p>Estudiante</p>
-                        <div class="col d-flex justify-content-end"><a href="#" class="btn btn-success">Agregar Estudiante</a></div>
+                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createEstudiante')}}" class="btn btn-success">Agregar Estudiante</a></div>
                     </div>
                     <div class="card-body">
                     <table class="table table-bordered table-striped table-hover">
@@ -86,7 +88,7 @@
                                                     @csrf
                                                     <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
                                                 </form>
-                                                <form action="#">
+                                                <form action="{{route('estudiante.edit',$estudiante->rut)}}">
                                                     @csrf
                                                     <button class="btn btn-sm btn-warning text-white mx-2 my-0 p-0" type="submit"><span class="material-icons">edit</span></button>
                                                 </form>

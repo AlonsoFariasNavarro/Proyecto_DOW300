@@ -14,21 +14,24 @@
                         <p>Editar</p>
                     </div>
                     <div class="card-body">
-                        <form action="#">
+                        <form action="{{route('estudiante.store',$estudiante->rut)}}" method="POST">
+                            @method('PUT')
+                            @csrf
                             <div>
-                                <label for="rut" value="{{$profesor->rut}}">RUT</label>
-                                <input for="rut" id="rut" name="rut" class="form-control" type="text">
+                                <label for="rut">RUT</label>
+                                <input for="rut" id="rut" name="rut" class="form-control" type="text" >
                             </div>
                             <div>
                                 <label for="nombre">Nombre</label>
-                                <input for="nombre" id="nombre" name="nombre" class="form-control" type="text">
+                                <input for="nombre" id="nombre" name="nombre" class="form-control" type="text" >
                             </div>
                             <div>
                                 <label for="apellido">Apellido</label>
                                 <input for="apellido" id="apellido" name="apellido" class="form-control" type="text">
                             </div>
                             <div>
-
+                                <label for="email">Email</label>
+                                <input for="email" id="email" name="email" class="form-control" type="text">
                             </div>
                             <div class="d-flex justify-content-end pt-4">
                                 <button class="btn btn-warning px-2" type="reset">Cancelar</button>

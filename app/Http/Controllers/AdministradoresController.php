@@ -16,14 +16,10 @@ class AdministradoresController extends Controller
         return view('admin.index',compact(['profesores','estudiantes','propuestas']));
     }
 
-    public function edit(){
-        $profesor = Profesor::orderBy('rut');
-        return view('admin.edit',compact('profesor'));
+    public function edit($profesor){
+        $profesor = Profesor::find($profesor);
+        return view('admin.editProfesor',compact('profesor'));
     }
 
 
-    // public function destroy(Estudiante $estudiante){
-    //     $estudiante->delete();
-    //     return redirect()->route('admin.index');
-    // }
 }

@@ -22,4 +22,16 @@ class ProfesoresController extends Controller
         $profesor->delete();
         return redirect()->route('admin.index');
     }
+
+    public function profesorupdate(Request $request, $profesor){
+        $profesor=Profesor::find($profesor);
+        $profesor->rut = $request->rut;
+        $profesor->nombre = $request->nombre;
+        $profesor->apellido = $request->apellido;
+        $profesor->save();
+        return redirect()->route('admin.index');
+    }
+
+
 }
+

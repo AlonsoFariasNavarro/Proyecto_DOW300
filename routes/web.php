@@ -13,13 +13,18 @@ Route::post('/',[HomeController::class,'loginUser'])->name('home.loginUser');
 //Estudiante
 Route::get('/estudiante',[EstudiantesController::class,'index'])->name('estudiante.index');
 Route::get('/estudiante/estado',[EstudiantesController::class,'status'])->name('estudiante.status');
-Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('estudiante.create');
-Route::delete('/admin/{estudiante}',[EstudiantesController::class,'destroy'])->name('estudiante.destroy');
+// Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('estudiante.create');
+Route::delete('/estudiante/{estudiante}/delete',[EstudiantesController::class,'destroy'])->name('estudiante.destroy');
+Route::get('/estudiante/{estudiante}/edit',[EstudiantesController::class,'Eedit'])->name('estudiante.edit');
+Route::put('/estudiante/{estudiante}/update',[EstudiantesController::class,'update'])->name('estudiante.update');
+Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('admin.createEstudiante');
+Route::post('/estudiante/{estudiante}/store',[EstudiantesController::class,'store'])->name('estudiante.store');
 
 //Profesor
 Route::get('/profesor',[ProfesoresController::class,'index'])->name('profesor.index');
 Route::get('/profesor/revision',[ProfesoresController::class,'revision'])->name('profesor.revision');
-Route::delete('/admin/{profesor}',[ProfesoresController::class,'profesordestroy'])->name('profesor.destroy');
+Route::delete('/profesor/{profesor}/delete',[ProfesoresController::class,'profesordestroy'])->name('profesor.destroy');
+Route::put('profesor/{profesor}/update',[ProfesoresController::class,'profesorupdate'])->name('profesor.update');
 
 //Admin
 Route::get('/admin',[AdministradoresController::class,'index'])->name('admin.index');
