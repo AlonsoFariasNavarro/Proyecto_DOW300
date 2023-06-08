@@ -16,7 +16,11 @@ class Estudiante extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
-    public function propuestasConPivot(){
-        return $this->belongsToMany(Propuesta::class)->withPivot('estado');
+    public function propuestas():HasMany{
+        return $this->hasMany(Propuesta::class);
     }
+
+    // public function propuestasConPivot(){
+    //     return $this->belongsToMany(Propuesta::class)->withPivot('estado');
+    // }
 }

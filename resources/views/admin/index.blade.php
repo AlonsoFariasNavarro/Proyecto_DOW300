@@ -2,7 +2,6 @@
 
 @section('hojas-estilo')
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 @endsection
 
 @section('contenido-principal')
@@ -14,7 +13,7 @@
                         <div class="col"></div>
                         <p>Equipo de Profesores</p>
                         <div class="col d-flex justify-content-end">
-                            <a href="#" class="btn btn-success">Agregar Profesor</a>
+                            <a href="{{route('admin.createP')}}" class="btn btn-success">Agregar Profesor</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -58,7 +57,7 @@
                     <div class="card-header d-flex justify-content-center pt-3">
                         <div class="col"></div>
                         <p>Estudiante</p>
-                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createEstudiante')}}" class="btn btn-success">Agregar Estudiante</a></div>
+                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createE')}}" class="btn btn-success">Agregar Estudiante</a></div>
                     </div>
                     <div class="card-body">
                     <table class="table table-bordered table-striped table-hover">
@@ -68,7 +67,6 @@
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>E-Mail</th>
-                                    <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -79,8 +77,6 @@
                                         <td class="aling-middle">{{$estudiante->nombre}}</td>
                                         <td class="aling-middle">{{$estudiante->apellido}}</td>
                                         <td class="aling-middle">{{$estudiante->email}}</td>
-                                        <td class="aling-middle">
-                                        </td>
                                         <td>
                                             <div class="col d-flex m-2" style="">
                                                 <form action="{{route('estudiante.destroy',$estudiante->rut)}}" method="POST">

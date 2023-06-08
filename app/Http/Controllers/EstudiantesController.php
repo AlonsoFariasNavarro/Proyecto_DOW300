@@ -18,7 +18,7 @@ class EstudiantesController extends Controller
     }
 
     public function create(){
-        return view('admin.createEstudiante');
+        return view('estudiante.create');
     }
 
     public function destroy(Estudiante $estudiante){
@@ -28,6 +28,13 @@ class EstudiantesController extends Controller
 
     public function Eedit($estudiante){
         $estudiante=Estudiante::find($estudiante);
+        // $id = $estudiante->rut;
+        // $propuesta=Propuesta::find($id);
+        // $prop=Propuesta::all();
+        // echo $prop;
+        // echo $id;
+        // echo $estudiante->propuesta;
+        // exit();
         return view('admin.editEstudiante',compact('estudiante'));
     }
 

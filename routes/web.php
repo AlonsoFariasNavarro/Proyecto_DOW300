@@ -13,19 +13,22 @@ Route::post('/',[HomeController::class,'loginUser'])->name('home.loginUser');
 //Estudiante
 Route::get('/estudiante',[EstudiantesController::class,'index'])->name('estudiante.index');
 Route::get('/estudiante/estado',[EstudiantesController::class,'status'])->name('estudiante.status');
-// Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('estudiante.create');
 Route::delete('/estudiante/{estudiante}/delete',[EstudiantesController::class,'destroy'])->name('estudiante.destroy');
 Route::get('/estudiante/{estudiante}/edit',[EstudiantesController::class,'Eedit'])->name('estudiante.edit');
 Route::put('/estudiante/{estudiante}/update',[EstudiantesController::class,'update'])->name('estudiante.update');
-Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('admin.createEstudiante');
-Route::post('/estudiante/{estudiante}/store',[EstudiantesController::class,'store'])->name('estudiante.store');
+Route::post('/estudiante/store',[EstudiantesController::class,'store'])->name('estudiante.store');
 
 //Profesor
 Route::get('/profesor',[ProfesoresController::class,'index'])->name('profesor.index');
 Route::get('/profesor/revision',[ProfesoresController::class,'revision'])->name('profesor.revision');
 Route::delete('/profesor/{profesor}/delete',[ProfesoresController::class,'profesordestroy'])->name('profesor.destroy');
-Route::put('profesor/{profesor}/update',[ProfesoresController::class,'profesorupdate'])->name('profesor.update');
+Route::put('/profesor/{profesor}/update',[ProfesoresController::class,'profesorupdate'])->name('profesor.update');
+Route::post('/profesor/store',[ProfesoresController::class,'store'])->name('profesor.store');
 
 //Admin
 Route::get('/admin',[AdministradoresController::class,'index'])->name('admin.index');
 Route::get('/admin/edit/{profesor}',[AdministradoresController::class,'edit'])->name('admin.edit');
+Route::get('/admin/create/estudiantes',[AdministradoresController::class,'agregarEstudiante'])->name('admin.createE');
+Route::get('/admin/create/profesores',[AdministradoresController::class,'agregarProfesor'])->name('admin.createP');
+Route::get('/admin/estados',[AdministradoresController::class,'verestados'])->name('admin.estados');
+Route::get('/admin/estado/{estudiante}',[AdministradoresController::class,'verestado'])->name('admin.estado');

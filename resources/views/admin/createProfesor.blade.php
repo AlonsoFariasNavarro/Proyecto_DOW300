@@ -11,10 +11,10 @@
             <div class="col d-flex flex-column py-5">
                 <div class="card">
                     <div class="card-header d-flex justify-content-center">
-                        <p>Agregar Estudiante</p>
+                        <p>Agregar Profesor</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('estudiante.store')}}" method="POST">
+                        <form action="{{route('profesor.store')}}" method="POST">
                             @csrf
                             <div>
                                 <label for="rut">RUT</label>
@@ -28,12 +28,9 @@
                                 <label for="apellido">Apellido</label>
                                 <input for="apellido" id="apellido" name="apellido" class="form-control" type="text">
                             </div>
-                            <div>
-                                <label for="email">Email</label>
-                                <input for="email" id="email" name="email" class="form-control" type="text">
-                            </div>
                             <div class="d-flex justify-content-end pt-4">
                                 <button class="btn btn-warning px-2" type="reset">Cancelar</button>
+                                <div></div>
                                 <button class="btn btn-success" type="submit">Confirmar</button>
                             </div>
                         </form>

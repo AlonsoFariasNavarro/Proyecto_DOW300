@@ -21,5 +21,17 @@ class AdministradoresController extends Controller
         return view('admin.editProfesor',compact('profesor'));
     }
 
+    public function agregarEstudiante(){
+        return view('admin.createEstuidante');
+    }
+
+    public function agregarProfesor(){
+        return view('admin.createProfesor');
+    }
+
+    public function verestados(){
+        $propuestas = Propuesta::orderBy('id')->get();
+        return view('admin.estados',compact('propuestas'));
+    }
 
 }

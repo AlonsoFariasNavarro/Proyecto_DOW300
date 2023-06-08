@@ -32,6 +32,15 @@ class ProfesoresController extends Controller
         return redirect()->route('admin.index');
     }
 
+    public function store(Request $request){
+        $profesor= new Profesor;
+        $profesor->rut = $request->rut;
+        $profesor->nombre = $request->nombre;
+        $profesor->apellido = $request->apellido;
+        $profesor->save();
+        return redirect()->route('admin.index');
+    }
+
 
 }
 
