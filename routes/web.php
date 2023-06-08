@@ -31,4 +31,5 @@ Route::get('/admin/edit/{profesor}',[AdministradoresController::class,'edit'])->
 Route::get('/admin/create/estudiantes',[AdministradoresController::class,'agregarEstudiante'])->name('admin.createE');
 Route::get('/admin/create/profesores',[AdministradoresController::class,'agregarProfesor'])->name('admin.createP');
 Route::get('/admin/estados',[AdministradoresController::class,'verestados'])->name('admin.estados');
-Route::get('/admin/estado/{estudiante}',[AdministradoresController::class,'verestado'])->name('admin.estado');
+Route::get('/admin/estados/{id}',[AdministradoresController::class,'editarEstados'])->name('admin.editarEstados');
+Route::put('/admin/estados/{id}/update',[AdministradoresController::class,'estadoUpdate'])->name('admin.updateEstados');

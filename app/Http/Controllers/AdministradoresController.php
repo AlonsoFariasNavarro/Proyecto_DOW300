@@ -34,4 +34,16 @@ class AdministradoresController extends Controller
         return view('admin.estados',compact('propuestas'));
     }
 
+    public function editarEstados($propuesta){
+        $propuesta = Propuesta::find($propuesta);
+        return view('admin.editarEstado',compact('propuesta'));
+    }
+
+    public function estadoUpdate(Request $request,$propuesta){
+        $propuesta = Propuesta::find($propuesta);
+        $propuesta->estado = $request->estado;
+        $propuesta->save();
+        return redirect()->route('admin.estados');
+    }
+
 }

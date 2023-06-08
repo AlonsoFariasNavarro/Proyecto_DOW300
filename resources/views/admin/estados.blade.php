@@ -37,7 +37,7 @@
                                         Corregir
                                     @endif
                                 </td>
-                                <td><a href="#" class=" d-flex justify-items-center"><span class="material-icons">edit</span></a></td>
+                                <td><a href="{{route('admin.editarEstados',$propuesta->id)}}" class=" d-flex justify-items-center"><span class="material-icons">edit</span></a></td>
                                 <td><a href="{{$propuesta->documento}}">click aqui</a></td>
                             </tr>
                         </tbody>
