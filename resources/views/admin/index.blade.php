@@ -1,7 +1,16 @@
 @extends('templates.master')
 
-@section('hojas-estilo')
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+@section('if-nombre')
+    @if(Route::current()->getName()=='admin.index')
+        <H4 class="fw-bold">Administrador</H4>
+    @endif
+@endsection
+
+@section('if-contenido')
+    @if(Route::current()->getName()=='admin.index')
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('admin.index')}}">Inicio</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('admin.estados')}}">Estados</a><li>
+    @endif
 @endsection
 
 @section('contenido-principal')

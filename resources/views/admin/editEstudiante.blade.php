@@ -1,7 +1,16 @@
 @extends('templates.master')
 
-@section('hojas-estilo')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+@section('if-nombre')
+    @if(Route::current()->getName()=='estudiante.edit')
+        <h4 class="fw-bold">Administrador</h4>
+    @endif
+@endsection
+
+@section('if-contenido')
+    @if(Route::current()->getName()=='estudiante.edit')
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('admin.index')}}">Inicio</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('admin.estados')}}">Estados</a><li>
+    @endif
 @endsection
 
 @section('contenido-principal')

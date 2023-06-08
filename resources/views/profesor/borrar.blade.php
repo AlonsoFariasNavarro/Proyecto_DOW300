@@ -16,6 +16,30 @@
             <!-- ingresar comentarios -->
             <!-- borrar comentarios -->
             <!-- tabla -->
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <img class="" style="height: 5rem;" src="{{ asset('images/isotipo_usm_color.jpg') }}">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col-4"></div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('profesor.index')}}">Revision</a>
+                <li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('profesor.comentar')}}">Comentar</a>
+                <li> 
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('profesor.borrar')}}">Borrar Comentario</a>
+                <li>   
+            </ul>   
+                <a href="{{route('home.login')}}" class="btn btn-primary d-flex justify-content-end">salir</a>
+        </div>
+    </div>
+</nav>
 <div class="row">
     <div class="col py-4">
         <div class="card">

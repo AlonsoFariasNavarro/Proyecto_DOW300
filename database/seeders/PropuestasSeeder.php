@@ -14,6 +14,7 @@ class PropuestasSeeder extends Seeder
         DB::table('propuestas')->insert([
 
             ['fecha' => '2023-06-02','documento' =>'es un documento','estado'=>1,'created_at'=>Carbon::now(),'estudiante_rut'=>'21450686-0'],
+            ['fecha' => '2023-06-08','documento' =>'es un documento','estado'=>2,'created_at'=>Carbon::now(),'estudiante_rut'=>'21450686-1'],
 
         ]);
     }

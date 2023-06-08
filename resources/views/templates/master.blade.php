@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/custom-colors.min.css">
+    <link rel="stylesheet" href="{{asset('css/custom-colors.min.css')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @yield('hojas-estilo')
     <title></title>
@@ -14,23 +14,14 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
             <img class="" style="height: 5rem;" src="{{ asset('images/isotipo_usm_color.jpg') }}">
+            @yield('if-nombre')
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="col-4"></div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                    @if(Route::current()->getName()=='admin.index')
-                    <a class="nav-link active" aria-current="page" href="{{route('admin.estados')}}">Propuestas</a>
-                    @elseif(Route::current()->getName()=='estudiante.index')
-                    <a class="nav-link active" aria-current="page" href="#">Propuestas</a>
-                    @endif
-                <li>
-                    
-                </li>
+                @yield('if-contenido')
             </ul>
                 <a href="{{ asset('/') }}" class="btn btn-primary d-flex justify-content-end">Cerrar Sesion</a>
             </div>
