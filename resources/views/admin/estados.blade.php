@@ -29,8 +29,8 @@
                                 <th>RUT Estudiante</th>
                                 <th>Fecha</th>
                                 <th>Estado</th>
-                                <th>Permutar Estado</th>
-                                <th colspan="2">Ver propuesta</th>
+                                <th>Cambiar Estado</th>
+                                <th>Ver propuesta</th>
                             </tr>
                         </thead>
                         <tbody>
