@@ -48,7 +48,7 @@
                                 </select>
                             </div>
                             <div class="d-flex justify-content-end pt-4">
-                                <button class="btn btn-warning px-2" type="reset">Cancelar</button>
+                                <a href="{{route('admin.estados')}}" class="btn btn-warning">Cancelar</a>
                                 <button class="btn btn-success" type="submit">Confirmar</button>
                             </div>
                         </form>

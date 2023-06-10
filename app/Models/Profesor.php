@@ -14,8 +14,12 @@ class Profesor extends Model
     protected $primaryKey = 'rut';
     protected $keyType = 'string';
     public $incrementing = false;
+    //CAMBIAR A LA TABLA 2
+    public function propuestas(){
+        return $this->belongToMany(Propuesta::class,'profesor_rut','rut');
+    }
 
     public function propuestasConPivot(){
-        return $this->belongToMany(Propuesta::class)->whitPivot(['fecha','hora','comentario']);
+        return $this->belongToMany(Propuesta::class,'profesor_rut','rut')->whitPivot(['fecha','hora','comentario']);
     }
 }

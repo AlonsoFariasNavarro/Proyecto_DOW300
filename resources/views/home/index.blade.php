@@ -26,15 +26,6 @@
                                 <form action="{{route('home.loginUser')}}" method="POST">
                                     <!-- @method('PUT') -->
                                     @csrf
-                                    <div class="mb-3">
-                                        <label for="username" class="form-label">Rut Usuario</label>
-                                        <input type="text" id="username" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Contraseña</label>
-                                        <input type="password" id="password" class="form-control">
-                                    </div>
-                                    <div class="row">
                                         <div class="col-8">
                                             <div class="form-check">
                                               <input class="form-check-input" type="radio" name="userid" id="Estudiante" value="Estudiante" checked>

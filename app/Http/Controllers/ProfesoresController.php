@@ -22,28 +22,32 @@ class ProfesoresController extends Controller
         return view('profesor.comentar',compact(['profesores','propuesta']));
     }
 
-    public function addComentario(Request $request){
-        $comentario = new ProfesorPropuesta;
-        $comentario->propuesta_id = $request->id;
-        $comentario->profesor_rut = $request->rut;
-        $comentario->fecha = Carbon::now();
-        $comentario->hora = Carbon::now();
-        $comentario->comentario = $request->comentario;
-        $comentario->save();
+    public function addComentario($propuesta,Request $request){
+        $rutprofe = $request->rut;
+        $comentario = Propuesta::where('id',$propuesta)->first();
+        $profesor = Profesor::find($rutprofe);
+        $comentario->profesores()->attach($profesor->rut,['fecha'=> Carbon::now(),'hora'=> Carbon::now(),'comentario'=>$request->comentario]);
         return redirect()->route('profesor.comentarios');
     }
 
-    public function deleteComentario(Profesor $profesor){
-        echo $profesor;
-        $profesor->propuestasConPivot()->detach();
-        exit();
-        $propuesta->delete();
+    public function deleteComentario(Request $request){
+        $comentario = Propuesta::where('id',$request->id)->first();
+        $profesor = Profesor::find($request->rut);
+        $rut=$profesor->rut;
+        $comentario->profesoresConPivot()->dettach($rut);
         return redirect()->route('profesor.comentarios');
     }
 
     public function mostrarComentarios(){
         $propuestas = ProfesorPropuesta::orderBy('propuesta_id')->get();
         return view('profesor.comentarios',compact('propuestas'));
+    }
+
+    public function deleteConfirm($propuesta,Request $request){
+        $comentario = $request->comentario;
+        $profesor = Profesor::find($request->rut);
+        $propuesta = Propuesta::where('id',$propuesta)->first();
+        return view('profesor.borrarComentario',compact(['propuesta','profesor','comentario']));
     }
 
 

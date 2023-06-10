@@ -34,13 +34,12 @@
                                 <td class="align-middle">{{$propuesta->profesor_rut}}</td>                       
                                 <td class="align-middle">{{$propuesta->fecha}}</td>
                                 <td class="align-middle">{{$propuesta->comentario}}</td>
-                                <td>
-                                    <form action="#" method='POST'>
-                                        @method('DELETE')
-                                        @csrf
-                                        <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
-                                    </form>
-                                </td>
+                                <form action="{{route('profesor.deleteConfirm',$propuesta->propuesta_id)}}" hidden>
+                                    @csrf
+                                    <input type="text" name="comentario" hidden value="{{$propuesta->comentario}}">
+                                    <input type="text" name="rut" hidden value="{{$propuesta->profesor_rut}}">
+                                    <td><button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button></td>
+                                </form>
                             </tr>
                         @endforeach
                     </tbody>

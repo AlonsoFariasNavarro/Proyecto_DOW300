@@ -39,10 +39,10 @@
                             </div>
                             <div>
                                 <label for="email">Email</label>
-                                <input for="email" id="email" name="email" class="form-control" type="text">
+                                <input for="email" id="email" name="email" class="form-control" type="email">
                             </div>
                             <div class="d-flex justify-content-end pt-4">
-                                <button class="btn btn-warning px-2" type="reset">Cancelar</button>
+                                <a href="{{route('admin.index')}}" class="btn btn-warning">Cancelar</a>
                                 <button class="btn btn-success" type="submit">Confirmar</button>
                             </div>
                         </form>

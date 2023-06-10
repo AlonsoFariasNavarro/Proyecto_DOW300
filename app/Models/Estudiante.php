@@ -17,10 +17,6 @@ class Estudiante extends Model
     public $incrementing = false;
 
     public function propuestas():HasMany{
-        return $this->hasMany(Propuesta::class);
+        return $this->hasMany(Propuesta::class,'estudiante_rut','rut');
     }
-
-    // public function propuestasConPivot(){
-    //     return $this->belongsToMany(Propuesta::class)->withPivot('estado');
-    // }
 }

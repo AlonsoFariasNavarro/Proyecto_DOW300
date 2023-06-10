@@ -16,16 +16,16 @@ class ProfesoresSeeder extends Seeder
     {
         DB::table('profesores')->insert([
 
-            ['rut'=>'22450686-0','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-1','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-2','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-3','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-4','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-5','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-6','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-7','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-8','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
-            ['rut'=>'22450686-9','nombre'=>'Alonso','apellido'=>'Farias','created_at'=>Carbon::now()],
+            ['rut'=>'23414565-0','nombre'=>'Bastian','apellido'=>'Rojas','created_at'=>Carbon::now()],
+            ['rut'=>'22154353-1','nombre'=>'Rodrigo','apellido'=>'Plaza','created_at'=>Carbon::now()],
+            ['rut'=>'23244141-2','nombre'=>'Fiora','apellido'=>'Laurent','created_at'=>Carbon::now()],
+            ['rut'=>'21356454-3','nombre'=>'Rayo','apellido'=>'Mccuin','created_at'=>Carbon::now()],
+            ['rut'=>'54572345-4','nombre'=>'To','apellido'=>'Mate','created_at'=>Carbon::now()],
+            ['rut'=>'43435353-5','nombre'=>'Kick','apellido'=>'buttowski','created_at'=>Carbon::now()],
+            ['rut'=>'24547378-6','nombre'=>'Donkey','apellido'=>'Kong','created_at'=>Carbon::now()],
+            ['rut'=>'21435678-7','nombre'=>'Mario','apellido'=>'Mario','created_at'=>Carbon::now()],
+            ['rut'=>'20435467-8','nombre'=>'Lugi','apellido'=>'Mario','created_at'=>Carbon::now()],
+            ['rut'=>'19546758-9','nombre'=>'Optimus','apellido'=>'Prime','created_at'=>Carbon::now()],
 
         ]);
     }

@@ -1,5 +1,6 @@
 @extends('templates.master')
-
+{{-- PARA SUBIR ARCHIVOS PROPIEDAD DE FROM ENCTYPE="MULTIPART/FORM-DATA"
+$propuesta->documento = $request->documento->store('public/propuestas') --}}
 @section('if-nombre')
     @if(Route::current()->getName()=='admin.index')
         <H4 class="fw-bold">Administrador</H4>
@@ -65,7 +66,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-center pt-3">
                         <div class="col"></div>
-                        <p>Estudiante</p>
+                        <p>Estudiantes</p>
                         <div class="col d-flex justify-content-end"><a href="{{route('admin.createE')}}" class="btn btn-success">Agregar Estudiante</a></div>
                     </div>
                     <div class="card-body">

@@ -14,7 +14,11 @@ class Propuesta extends Model
     protected $table = 'propuestas';
 
     public function estudiante(): HasMany{
-        return $this->belongsTo(Estudiante::class);
+        return $this->belongsTo(Estudiante::class,'estudiante_rut','rut');
+    }
+
+    public function profesores(){
+        return $this->belongsToMany(Profesor::class);
     }
 
     public function profesoresConPivot(){

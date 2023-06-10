@@ -27,7 +27,8 @@ Route::post('/profesor/store',[ProfesoresController::class,'store'])->name('prof
 Route::get('/profesor/comentar/{id}',[ProfesoresController::class,'comentar'])->name('profesor.comentar');
 Route::get('/profesor/comentarios',[ProfesoresController::class,'mostrarComentarios'])->name('profesor.comentarios');
 Route::post('/profesor/comentar/{id}/add',[ProfesoresController::class,'addComentario'])->name('profesor.addComentario');
-Route::delete('/profesor/comentario/{rut}/delete',[ProfesoresController::class,'deleteComentario'])->name('profesor.deleteComentario');
+Route::get('profesor/comentar/{id}/delete/confirmar',[ProfesoresController::class,'deleteConfirm'])->name('profesor.deleteConfirm');
+Route::delete('/profesor/comentario/delete/{rut}',[ProfesoresController::class,'deleteComentario'])->name('profesor.deleteComentario');
 
 //Admin
 Route::get('/admin',[AdministradoresController::class,'index'])->name('admin.index');
