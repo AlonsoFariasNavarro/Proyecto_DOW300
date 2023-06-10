@@ -12,11 +12,14 @@ Route::post('/',[HomeController::class,'loginUser'])->name('home.loginUser');
 
 //Estudiante
 Route::get('/estudiante',[EstudiantesController::class,'index'])->name('estudiante.index');
+Route::get('/estudiante/{rut}',[EstudiantesController::class,'indexUnico'])->name('estudiante.indexUnico');
 Route::get('/estudiante/estado',[EstudiantesController::class,'status'])->name('estudiante.status');
+Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('estudiante.create');
 Route::delete('/estudiante/{estudiante}/delete',[EstudiantesController::class,'destroy'])->name('estudiante.destroy');
 Route::get('/estudiante/{estudiante}/edit',[EstudiantesController::class,'Eedit'])->name('estudiante.edit');
 Route::put('/estudiante/{estudiante}/update',[EstudiantesController::class,'update'])->name('estudiante.update');
 Route::post('/estudiante/store',[EstudiantesController::class,'store'])->name('estudiante.store');
+Route::post('/estudiante/agregar/propuesta',[EstudiantesController::class,'guardarPropuesta'])->name('estudiante.guardarPropuesta');
 
 //Profesor
 Route::get('/profesor',[ProfesoresController::class,'index'])->name('profesor.index');

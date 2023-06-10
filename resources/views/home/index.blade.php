@@ -30,19 +30,19 @@
                                             <div class="form-check">
                                               <input class="form-check-input" type="radio" name="userid" id="Estudiante" value="Estudiante" checked>
                                               <label class="form-check-label" for="Estudiante">
-                                                Estudiante
+                                                Ingresar como Estudiante
                                               </label>
                                             </div>
                                             <div class="form-check">
                                               <input class="form-check-input" type="radio" name="userid" id="Profesor" value="Profesor">
                                               <label class="form-check-label" for="Profesor">
-                                                Profesor
+                                              Ingresar como Profesor
                                               </label>
                                             </div>
                                             <div class="form-check">
                                               <input class="form-check-input" type="radio" name="userid" id="Administrador" value="Administrador">
                                               <label class="form-check-label" for="Administrador">
-                                                Administrador
+                                              Ingresar como Administrador
                                               </label>
                                             </div>
                                         </div>

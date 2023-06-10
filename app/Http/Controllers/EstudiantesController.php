@@ -6,11 +6,29 @@ use Illuminate\Http\Request;
 use App\Models\Profesor;
 use App\Models\Estudiante;
 use App\Models\Propuesta;
+use App\Models\ProfesorPropuesta;
+use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class EstudiantesController extends Controller
 {
     public function index(){
-        return view('estudiante.index');
+        $propuestas = Propuesta::orderBy('id')->get();
+        $estudiantes = Estudiante::orderBy('rut')->get();
+        $comentarios = ProfesorPropuesta::orderBy('propuesta_id')->get();
+        return view('estudiante.index',compact(['estudiantes','propuestas','comentarios']));
+    }
+
+    public function indexUnico($estudiante){
+        $estudiante = Estudiante::find($estudiante);
+        $propuestas = Propuesta::where('estudiante_rut',$estudiante->rut)->first();
+        if($propuestas == null){
+            return view();
+        }
+        dd($propuestas);
+        $propuestas = Propuesta::orderBy('id')->get();
+        $comentarios = ProfesorPropuesta::orderBy('propuesta_id')->get();
+        return view('estudiante.index',compact(['estudiante','propuestas','comentarios']));
     }
     
     public function status(){
@@ -18,7 +36,8 @@ class EstudiantesController extends Controller
     }
 
     public function create(){
-        return view('estudiante.create');
+        $estudiantes = Estudiante::orderBy('rut')->get();
+        return view('estudiante.create',compact('estudiantes'));
     }
 
     public function destroy(Estudiante $estudiante){
@@ -58,4 +77,15 @@ class EstudiantesController extends Controller
         return redirect()->route('admin.index');
     }
 
+    public function guardarPropuesta(Request $request){
+        $request->file('archivo')->storeAs('',$request->file('archivo')->getClientOriginalName());
+        $propuesta = new Propuesta;
+        $propuesta->fecha =Carbon::now();
+        $propuesta->estudiante_rut = $request->rut;
+        $propuesta->documento=$request->file('archivo')->getClientOriginalName();
+        $propuesta->save();
+        return redirect()->route('estudiante.index');
+    }
+
+    
 }

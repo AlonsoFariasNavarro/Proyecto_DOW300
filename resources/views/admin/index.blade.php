@@ -15,18 +15,18 @@ $propuesta->documento = $request->documento->store('public/propuestas') --}}
 @endsection
 
 @section('contenido-principal')
-    <div class="container-fluid min-vh-100" style="background-color:#051f31;">
+    <div class="container-fluid min-vh-100 bg-primary">
         <div class="row">
             <div class="col py-5">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-center pt-3">
+                <div class="card border-black rounded">
+                    <div class="card-header d-flex justify-content-center pt-3 bg-secondary text-white">
                         <div class="col"></div>
-                        <p>Equipo de Profesores</p>
+                        <h3>Equipo de Profesores</h3>
                         <div class="col d-flex justify-content-end">
-                            <a href="{{route('admin.createP')}}" class="btn btn-success">Agregar Profesor</a>
+                            <a href="{{route('admin.createP')}}" class="btn btn-primary pt-2"><h6>Agregar Profesor</h6></a>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-ligh">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
@@ -47,11 +47,11 @@ $propuesta->documento = $request->documento->store('public/propuestas') --}}
                                                 <form action="{{route('profesor.destroy',$profesor->rut)}}" method="POST">
                                                     @method('delete')
                                                     @csrf
-                                                    <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
+                                                    <button class="btn btn-sm btn-danger pt-2 my-0" type="submit"><span class="material-icons">delete</span></button>
                                                 </form>
                                                 <form action="{{ route('admin.edit',$profesor->rut) }}">
                                                     @csrf
-                                                    <button class="btn btn-sm btn-warning text-white mx-2 my-0 p-0" type="submit"><span class="material-icons">edit</span></button>
+                                                    <button class="btn btn-sm btn-warning text-white mx-2 my-0 pt-2" type="submit"><span class="material-icons">edit</span></button>
                                                 </form>
                                             </div>
                                         </td>
@@ -63,13 +63,13 @@ $propuesta->documento = $request->documento->store('public/propuestas') --}}
                 </div>
             </div>
             <div class="col py-5">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-center pt-3">
+                <div class="card border-black">
+                    <div class="card-header d-flex justify-content-center pt-3" style="background-color: #F3C818;">
                         <div class="col"></div>
-                        <p>Estudiantes</p>
-                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createE')}}" class="btn btn-success">Agregar Estudiante</a></div>
+                        <h3>Estudiantes</h3>
+                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createE')}}" class="btn pt-2 bg-warning"><h6>Agregar Estudiante</h6></a></div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-ligh">
                     <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
@@ -92,11 +92,11 @@ $propuesta->documento = $request->documento->store('public/propuestas') --}}
                                                 <form action="{{route('estudiante.destroy',$estudiante->rut)}}" method="POST">
                                                     @method('delete')
                                                     @csrf
-                                                    <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
+                                                    <button class="btn btn-sm btn-danger pt-2 my-0" type="submit"><span class="material-icons">delete</span></button>
                                                 </form>
                                                 <form action="{{route('estudiante.edit',$estudiante->rut)}}">
                                                     @csrf
-                                                    <button class="btn btn-sm btn-warning text-white mx-2 my-0 p-0" type="submit"><span class="material-icons">edit</span></button>
+                                                    <button class="btn btn-sm btn-warning text-white mx-2 my-0 pt-2" type="submit"><span class="material-icons">edit</span></button>
                                                 </form>
                                             </div>
                                         </td>

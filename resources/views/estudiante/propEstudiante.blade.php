@@ -1,12 +1,11 @@
 @extends('templates.master')
-
 @section('if-nombre')
-    @if(Route::current()->getName()=='estudiante.index')
+    @if(Route::current()->getName()=='estudiante.indexUnico')
         <h4  class="px-2 fw-bold">Estudiantes</h4>
     @endif
 @endsection
 @section('if-contenido')
-    @if(Route::current()->getName()=='estudiante.index')
+    @if(Route::current()->getName()=='estudiante.indexUnico')
     <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('estudiante.index')}}">Propuestas</a></li>
     <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('estudiante.create')}}">Agregar propuesta</a></li>
     <li class="nav-item dropdown">
@@ -82,48 +81,35 @@
         <div class="col-6 flex-column py-2">
             <h1 >Estado de las propuestas</h1>
             <table class=" table table-bordered table-striped table-hover align-items-center bg-white">                    
-                    <thead>
-                         
-                         <tr>                                                                            
-                             <th class="text-center">N° DE PROPUESTA</th>
-                             <th class="text-center">ESTADO DE LA PROPUESTA</th>                                        
-                        </tr>
+                <thead>
                         
-                    </thead>
-                    <tbody> 
-
-                        @foreach($propuestas as $propuesta)                                  
-                        <tr>                                                                               
-                            <td class="align-middle text-center"> {{$propuesta->id}}</td>
-                            @if($propuesta->estado==0)
-                            <td class="align-middle text-center">Por revisar</td>
-                            @endif
-                            @if($propuesta->estado==1)
-                            <td class="align-middle text-center">Aceptado</td>
-                            @endif
-                            @if($propuesta->estado==2)
-                            <td class="align-middle text-center">Rechazado</td>
-                            @endif
-                            @if($propuesta->estado==3)
-                            <td class="align-middle text-center">Corregir</td>
-                            @endif
-                            
-
-                        </tr> 
-                        @endforeach                                
-                    </tbody>
-                
+                        <tr>                                                                            
+                            <th class="text-center">N° DE PROPUESTA</th>
+                            <th class="text-center">ESTADO DE LA PROPUESTA</th>                                        
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    @foreach($propuestas as $propuesta)                                  
+                    <tr>                                                                               
+                        <td class="align-middle text-center"> {{$propuesta->id}}</td>
+                        @if($propuesta->estado==0)
+                        <td class="align-middle text-center">Por revisar</td>
+                        @endif
+                        @if($propuesta->estado==1)
+                        <td class="align-middle text-center">Aceptado</td>
+                        @endif
+                        @if($propuesta->estado==2)
+                        <td class="align-middle text-center">Rechazado</td>
+                        @endif
+                        @if($propuesta->estado==3)
+                        <td class="align-middle text-center">Corregir</td>
+                        @endif
+                    </tr> 
+                    @endforeach                                
+                </tbody>
             </table>
-             
-
         </div>
-        
-     
     </div>
-
-    
-  
-    
-       
 </div>
 @endsection

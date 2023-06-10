@@ -30,11 +30,10 @@ class ProfesoresController extends Controller
         return redirect()->route('profesor.comentarios');
     }
 
-    public function deleteComentario(Request $request){
-        $comentario = Propuesta::where('id',$request->id)->first();
+    public function deleteComentario(Request $request, $profesor){
+        $comentario = Propuesta::find($request->id);
         $profesor = Profesor::find($request->rut);
-        $rut=$profesor->rut;
-        $comentario->profesoresConPivot()->dettach($rut);
+        $comentario->profesoresConPivot()->detach($profesor->rut);
         return redirect()->route('profesor.comentarios');
     }
 
@@ -47,6 +46,8 @@ class ProfesoresController extends Controller
         $comentario = $request->comentario;
         $profesor = Profesor::find($request->rut);
         $propuesta = Propuesta::where('id',$propuesta)->first();
+        // echo($propuesta->id);
+        // exit();
         return view('profesor.borrarComentario',compact(['propuesta','profesor','comentario']));
     }
 

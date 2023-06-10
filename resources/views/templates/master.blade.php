@@ -15,15 +15,32 @@
     <div class="container-fluid">
             <img class="" style="height: 5rem;" src="{{ asset('images/isotipo_usm_color.jpg') }}">
             @yield('if-nombre')
+            @if(Route::current()->getName()=='estudiante.indexUnico')
+                <h4  class="px-2 fw-bold">Estudiantes</h4>
+            @endif
+            @if(Route::current()->getName()=='estudiante.indexUnico')
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('estudiante.index')}}">Propuestas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('estudiante.create')}}">Agregar propuesta</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black pt-2 pb-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Elegir Único Estudiante
+                </a>
+                <ul class="dropdown-menu">
+                    @foreach($estudiantes as $estudiante)
+                        <li><a class="dropdown-item" href="{{route('estudiante.indexUnico',$estudiante->rut)}}">{{$estudiante->rut}} / {{$estudiante->nombre}} {{$estudiante->apellido}}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+            @endif
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="col-4"></div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                @yield('if-contenido')
-            </ul>
-                <a href="{{ asset('/') }}" class="btn btn-primary d-flex justify-content-end">Cerrar Sesion</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    @yield('if-contenido')
+                </ul>
+                <a href="{{ asset('/') }}" class="btn btn-primary d-flex justify-content-end pt-2 pb-1"><h6>Cerrar Sesion</h6></a>
             </div>
         </div>
     </nav>

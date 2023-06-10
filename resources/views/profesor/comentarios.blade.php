@@ -36,8 +36,9 @@
                                 <td class="align-middle">{{$propuesta->comentario}}</td>
                                 <form action="{{route('profesor.deleteConfirm',$propuesta->propuesta_id)}}" hidden>
                                     @csrf
-                                    <input type="text" name="comentario" hidden value="{{$propuesta->comentario}}">
-                                    <input type="text" name="rut" hidden value="{{$propuesta->profesor_rut}}">
+                                    <input type="text" hidden name="id" value="$propuesta->propuesta_id">
+                                    <input type="text" hidden name="comentario" value="{{$propuesta->comentario}}">
+                                    <input type="text" hidden name="rut" value="{{$propuesta->profesor_rut}}">
                                     <td><button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button></td>
                                 </form>
                             </tr>

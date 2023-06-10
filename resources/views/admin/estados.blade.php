@@ -18,12 +18,12 @@
 @endsection
 
 @section('contenido-principal')
-    <div class="container-fluid min-vh-100 d-flex flex-column">
-        <div class="row">
-            <div class="col py-4">
-                <div class="card">
-                    <table class="table table-bordered table-striped table-hover">
-                        <thead>
+    <div class="container-fluid min-vh-100 d-flex flex-column bg-primary">
+        <div class="row py-5">
+            <div class="col">
+                <div class="card border-black">
+                    <table class="table table-bordered table-striped table-hover rounded">
+                        <thead class="bg-info">
                             <tr>
                                 <th>N° Propuesta</th>
                                 <th>RUT Estudiante</th>

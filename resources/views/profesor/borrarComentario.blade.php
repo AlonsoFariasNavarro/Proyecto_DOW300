@@ -25,18 +25,17 @@
                         <form action="{{route('profesor.deleteComentario',$profesor->rut)}}" method="POST">
                             @method('delete')
                             @csrf
-                            <div>
-                                <label for="id">Propuesta ID</label>
-                                <input for="id" id="id" name="id" class="form-control" type="text" value="{{$propuesta->id}}" disabled>
-                            </div>
-                            <div>
-                                <label for="rut">RUT Profesor</label>
-                                <input for="rut" id="rut" name="rut" class="form-control" type="text" value="{{$profesor->rut}} / {{$profesor->nombre}} {{$profesor->apellido}}" disabled>
-                            </div>
-                            <div class="mb-3">
-                                    <label for="comentario" class="form-label">Comentario</label>
-                                    <input class="form-control" type="text" name="comentario" value="{{$comentario}}" disabled>
-                                </div>
+                            <label for="id">Propuesta ID {{$propuesta->id}}</label>
+                            <input type="text" for="id" name="id" id="id" class="form-control" value="{{$propuesta->id}}" hidden>
+                            <input for="id" id="id" name="id" class="form-control" type="text" value="{{$propuesta->id}}" disabled>
+                            <label for="rut">RUT Profesor</label>
+                            <input for="rut" id="rut" name="rut" class="form-control" type="text" value="{{$profesor->rut}} / {{$profesor->nombre}} {{$profesor->apellido}}" disabled>
+                            <input for="rut" id="rut" name="rut" class="form-control" type="text" value="{{$profesor->rut}}" hidden>
+
+                            <label for="comentario" class="form-label">Comentario</label>
+                            <input class="form-control" type="text" name="comentario" value="{{$comentario}}" disabled>
+                            <input class="form-control" type="text" name="comentario" value="{{$comentario}}" hidden>
+                            
                             <div class="d-flex justify-content-end pt-4">
                                 <a href="{{route('profesor.index')}}" class="btn btn-warning">Cancelar</a>
                                 <button class="btn btn-success" type="submit">Confirmar</button>

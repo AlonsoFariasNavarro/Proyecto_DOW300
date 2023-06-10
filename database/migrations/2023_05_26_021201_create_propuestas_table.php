@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('propuestas', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
+            $table->string('estudiante_rut','10');
             $table->date('fecha');
+            $table->time('hora');
             $table->string('documento','100');
             $table->tinyinteger('estado')->default(0);
 
@@ -21,7 +23,6 @@ return new class extends Migration
 
 
 
-            $table->string('estudiante_rut','10');
             $table->foreign('estudiante_rut')->references('rut')->on('estudiantes');
         });
     }
