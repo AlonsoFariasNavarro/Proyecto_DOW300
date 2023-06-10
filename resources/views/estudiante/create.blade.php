@@ -13,16 +13,16 @@
 @endsection
 @section('contenido-principal')
 
-<div class="container d-flex align-items-center justify-content-center">    
-            <div class="row-12">
-                <div class="col-12 px-6 py-5 ">
-                    <div class="card">
-                        <div class="card-body" style="background-color:#5db4b9 ;">
+<div class="container-fluid min-vh-100 d-flex  justify-content-center " style="background-color: #05334F;">    
+            <div class="row">
+                <div class="col pt-5">
+                    <div class="card bg-secondary" style="width: 35rem;">
+                        <div class="card-body bg-secondary" style="background-color:#5db4b9 ;">
                             <!-- form -->
                             <form action="{{route('estudiante.guardarPropuesta')}}" method="POST" enctype= multipart/form-data>
                                 @csrf
-                                <div class="title">
-                                    <h1>Ingresar una propuesta</h1>
+                                <div class="text-white">
+                                    <h2>Ingresar una propuesta</h2>
                                 </div>
                                 <div class="form-group py-3">
                                     <select name="rut" class="form-select">
@@ -32,11 +32,11 @@
                                     </select>
                                     
                                 </div>                               
-                                <div class="form-group py-3">
-                                    <label class="form-label " for="Propuesta">Propuesta</label>
+                                <div class="form-group py-3 text-white">
+                                    <label class="form-label" for="Propuesta"><h6>Propuesta</h6></label>
                                     <input class="form-control" type="file" id="archivo" name="archivo">
                                 </div>
-                                <div class="text-start py-3">
+                                <div class="text-start">
                                     <button type ="submit" class="btn btn-success">ENVIAR PROPUESTA</button>
                                 </div>                               
                             </form>                       

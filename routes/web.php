@@ -12,7 +12,6 @@ Route::post('/',[HomeController::class,'loginUser'])->name('home.loginUser');
 
 //Estudiante
 Route::get('/estudiante',[EstudiantesController::class,'index'])->name('estudiante.index');
-Route::get('/estudiante/{rut}',[EstudiantesController::class,'indexUnico'])->name('estudiante.indexUnico');
 Route::get('/estudiante/estado',[EstudiantesController::class,'status'])->name('estudiante.status');
 Route::get('/estudiante/create',[EstudiantesController::class,'create'])->name('estudiante.create');
 Route::delete('/estudiante/{estudiante}/delete',[EstudiantesController::class,'destroy'])->name('estudiante.destroy');

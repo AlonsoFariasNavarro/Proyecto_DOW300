@@ -15,12 +15,12 @@
 @endsection
 
 @section('contenido-principal')
-<div class="container-fluid   min-vh-100 d-flex flex-column">   
+<div class="container-fluid min-vh-100 d-flex flex-column " style="background-color: #05334F;">   
     <div class="row">
         <div class="col py-4">
-            <div class="card">
-                <table class="table table-bordered table-striped table-hover">
-                    <thead>
+            <div class="card" style="background-color: #05334F;">
+                <table class="table table-bordered table-striped table-hover" style="border: solid #05334F;">
+                    <thead class="bg-secondary text-white">
                         <tr>
                             <th>N° Propuesta</th>
                             <th>Rut alumno</th>
@@ -30,7 +30,7 @@
                             <th>Comentar</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="bg-ligh">
                         @foreach ($propuestas as $propuesta)
                             <tr>
                                 <td class="align-middle">{{$propuesta->id}}</td>

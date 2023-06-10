@@ -18,18 +18,6 @@ class EstudiantesController extends Controller
         $comentarios = ProfesorPropuesta::orderBy('propuesta_id')->get();
         return view('estudiante.index',compact(['estudiantes','propuestas','comentarios']));
     }
-
-    public function indexUnico($estudiante){
-        $estudiante = Estudiante::find($estudiante);
-        $propuestas = Propuesta::where('estudiante_rut',$estudiante->rut)->first();
-        if($propuestas == null){
-            return view();
-        }
-        dd($propuestas);
-        $propuestas = Propuesta::orderBy('id')->get();
-        $comentarios = ProfesorPropuesta::orderBy('propuesta_id')->get();
-        return view('estudiante.index',compact(['estudiante','propuestas','comentarios']));
-    }
     
     public function status(){
         return view('estudiante.estado');
@@ -47,13 +35,6 @@ class EstudiantesController extends Controller
 
     public function Eedit($estudiante){
         $estudiante=Estudiante::find($estudiante);
-        // $id = $estudiante->rut;
-        // $propuesta=Propuesta::find($id);
-        // $prop=Propuesta::all();
-        // echo $prop;
-        // echo $id;
-        // echo $estudiante->propuesta;
-        // exit();
         return view('admin.editEstudiante',compact('estudiante'));
     }
 

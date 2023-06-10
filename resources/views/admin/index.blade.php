@@ -15,7 +15,7 @@ $propuesta->documento = $request->documento->store('public/propuestas') --}}
 @endsection
 
 @section('contenido-principal')
-    <div class="container-fluid min-vh-100 bg-primary">
+    <div class="container-fluid min-vh-100" style="background-color: #05334F;">
         <div class="row">
             <div class="col py-5">
                 <div class="card border-black rounded">
@@ -64,10 +64,10 @@ $propuesta->documento = $request->documento->store('public/propuestas') --}}
             </div>
             <div class="col py-5">
                 <div class="card border-black">
-                    <div class="card-header d-flex justify-content-center pt-3" style="background-color: #F3C818;">
+                    <div class="card-header d-flex justify-content-center pt-3 text-white" style="background-color: #084E79;">
                         <div class="col"></div>
                         <h3>Estudiantes</h3>
-                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createE')}}" class="btn pt-2 bg-warning"><h6>Agregar Estudiante</h6></a></div>
+                        <div class="col d-flex justify-content-end"><a href="{{route('admin.createE')}}" class="btn pt-2 bg-primary text-white"><h6>Agregar Estudiante</h6></a></div>
                     </div>
                     <div class="card-body bg-ligh">
                     <table class="table table-bordered table-striped table-hover">
